@@ -1,0 +1,17 @@
+type Customer {
+  customer_id: String
+  items: [ItemsEntry]
+}
+type ItemsEntry {
+  item_id: Int
+  name: String
+  price: Float
+  quantity: Int
+}
+
+type Query {
+  getCustomers: Customer
+    @rest(
+      endpoint: "https://tracking-app-436a9-default-rtdb.firebaseio.com/trackingItems/1Z4V180W0324616505.json"
+    )
+}
